@@ -2,6 +2,11 @@
 
 Sistema web para controle de clientes, produtos, estoque e vendas, com baixa automática de estoque após cada venda.
 
+## Acesso de Teste
+
+- Usuário: `admin@sistemaestoque.com`
+- Senha: `Admin@123`
+
 ## 1. Visão Geral
 
 Este projeto foi desenvolvido para uso acadêmico, com foco em:
@@ -129,6 +134,18 @@ npm run lint
 npm run build
 ```
 
+## 7.1 Publicação (Vercel)
+
+Projeto publicado em Vercel (plano gratuito), com deploy a partir do GitHub.
+
+Passos essenciais:
+1. Importar o repositório na Vercel
+2. Definir variável `DATABASE_URL` em Production/Preview/Development
+3. Deploy
+
+Observação técnica importante:
+- O `build` já está configurado para executar `prisma generate && next build`, evitando erro de Prisma Client em ambiente Vercel com cache.
+
 ## 8. Fluxo Operacional Recomendado
 
 1. Cadastrar usuário (primeiro acesso)
@@ -163,6 +180,7 @@ Também executado:
 - `src/components/money-input.tsx`: máscara monetária
 - `src/components/products-manager.tsx`: cadastro/edição de produtos
 - `prisma/schema.prisma`: modelo do banco
+- `db/schema.sql`: dump de estrutura SQL (DDL) para replicação do banco
 
 ## 11. Observações Acadêmicas
 
@@ -185,3 +203,4 @@ Projeto desenvolvido para estudo e prática de:
 Para replicar este sistema para outro cliente (código + banco + deploy), use:
 
 - [docs/CLONE_CLIENTE.md](docs/CLONE_CLIENTE.md)
+- [db/README_DUMP.md](db/README_DUMP.md)
